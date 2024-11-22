@@ -10,56 +10,72 @@
     <title>Document</title>
 </head>
 <body>
-    <section class="section-1">
-        <div class="hero">
-            <img src="image/odin-lined.png" alt="odin logo">
-            <h1>odin</h1>
-        </div>
-    </section>
-    <section class="section-2">
-        <div>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.</div>
-        <p>Sign up <i>now</i> to get started</p>
-        <p class="calltoaction">You <i>know</i> you want to.</p>
-        <form action="">
-            <fieldset>
-                <div class="title">Let's do this!</div>
-                <div class="container">
-                    <div>
-                        <label for="firstname">
-                            FIRST NAME:
-                            <input type="text" name="user_firstname" id="firstname">
-                            
-                        </label>
-                        <label for="email">
-                            EMAIL:
-                            <input type="email" name="user_email" id="email">
-                        </label>
-                        <label for="password">
-                            PASSWORD:
-                            <input type="password" name="user_password" id="password">
-                        </label>
+    <div class="content">
+        <section class="section-1">
+            <div class="hero">
+                <img src="image/odin-lined.png" alt="odin logo">
+                <h1>odin</h1>
+            </div>
+        </section>
+        <section class="section-2">
+            <div>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.</div>
+            <p>Sign up <i>now</i> to get started</p>
+            <p class="calltoaction">You <i>know</i> you want to.</p>
+            <form action="">
+                <fieldset>
+                    <div class="title">Let's do this!</div>
+                    <div class="container">
+                        <div>
+                            <label for="firstname">
+                                FIRST NAME:
+                                <input type="text" name="user_firstname" id="firstname" required>
+                                
+                            </label>
+                            <label for="email">
+                                EMAIL:
+                                <input type="email" name="user_email" id="email"  required>
+                            </label>
+                            <label for="password">
+                                PASSWORD:
+                                <input type="password" name="user_password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" onchange="register()" required>
+                            </label>
+                        </div>
+
+                        <div>
+                            <label for="lastname">
+                                LAST NAME:
+                                <input type="text" name="user_lastname" id="lastname">
+                            </label>
+                            <label for="phone">
+                                PHONE NUMBER:
+                                <input type="tel" name="user_phone" id="phone" required>
+                            </label>
+                            <label for="confirmedpassword">
+                                CONFIRM PASSWORD:
+                                <input type="password" name="user_confirm_password" id="confirmpassword" onchange="register()" required>
+                            </label>
+                        </div>
                     </div>
 
-                    <div>
-                        <label for="lastname">
-                            LAST NAME:
-                            <input type="text" name="user_lastname" id="lastname">
-                        </label>
-                        <label for="phone">
-                            PHONE NUMBER:
-                            <input type="tel" name="user_phone" id="phone">
-                        </label>
-                        <label for="confirmedpassword">
-                            CONFIRM PASSWORD:
-                            <input type="text" name="user_confirmed_password" id="confirmedpassword">
-                        </label>
-                    </div>
-                </div>
+                </fieldset>
+                <button class="submit" type="submit">Create Account</button>
+            </form>
+            <div>Already have an account? <a href="index.html">Log In.</a></div>
+        </section>
+    </div>
+    <div class="footer">@ 2024 Copyright by TazerVN - All Rights Reserved</div>
+    <script defer>
+        function register() {
 
-            </fieldset>
-        </form>
-        <button class="submit" type="submit">Create Account</button>
-        <div></div>
-    </section>
+            var password = document.querySelector('input[name=user_password]') ;
+            var confirm = document.querySelector('input[name=user_confirm_password]');
+
+            if (confirm.value === password.value) {
+                confirm.setCustomValidity('');
+            } else {
+                confirm.setCustomValidity('Passwords do not match');
+            }
+            }
+    </script>
 </body>
 </html>
