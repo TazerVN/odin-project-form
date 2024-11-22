@@ -6,12 +6,16 @@
 :root{
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 200px;
 }
 
 *{
     font-family: "rubik", sans-serif;
-    font-weight: 600;
-    font-size: 2vh;
+    font-weight: 400;
+    font-size: 1rem;
     color: black
 }
 
@@ -19,24 +23,19 @@ body{
     display: flex;
     justify-content: center;
     background-color: black;
-    min-height: 100vh;
-
-}
-
-section img.background{
-    position: absolute;
-    width: 600%;
-    z-index: -1;
+    flex: 1;
 }
 
 
 section.section-1{
-    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
     align-content: center;
-    background-image: url(image/duntan_render2.png);
-    background-position: center;
+    justify-content: center;
+    background: no-repeat center/400% url(image/duntan_render2.png);
     background-color: black;
-    flex:auto;
+    flex: 1 2 auto;
 
 }
 
@@ -45,8 +44,8 @@ section.section-1{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: auto;
-    height: auto;
+    position: relative;
+    bottom: 100px;
 }
 
 
@@ -62,50 +61,77 @@ section div img{
 }
 
 section.section-2{
+    background-color:whitesmoke ;
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
-    background-color: white;
-    flex: 0 0 auto;
-    max-width: 60vw;
-    padding: 2rem;
-    gap: 24px;
-
+    flex: 600px;
+    padding: 100px 0;
+}
+form{
+    width: auto;
 }
 
 form fieldset{
-    width: 100vw;
+    background-color: white;
     border: 1 solid #ccc;
-    box-shadow: 90 #ccc;
-
+    box-shadow: 0px 5px #ccc;
+    padding: 3rem;
+    flex: 1;
+    margin: 24px 0;
 }
 
 form fieldset div.container{
     display: flex;
+    width: auto;
+    margin-top: 24px;
 }
 
 fieldset div div{
-    width: 30vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 label{
-    margin: 1vw;
-    width: 6vw;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+    width: 300px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
 }
 
 input{
-    width: 20vw;
+    border-radius: 4px;
+    padding: 1px;
 }
 
 section.section-2 div{
-    margin: 0 vw;
-    max-width: 50vw;
+    max-width: 800px;
 }
 
-button{
-    size: 20vw;
+section button.submit{
+    font-weight: 600;
+    padding: 16px 32px;
+    background-color: gray;
+    color: white;
+    border-radius: 4px;
+    margin-top: 40px;
+    align-self: flex-start;
+    flex: 0l
+}
+
+section *{
+    font-size: 1vw;
+}
+
+.section-2 >:not(form){
+   margin: 10px 50px;
+}
+
+div.title{
+    font-weight: 700;
 }
